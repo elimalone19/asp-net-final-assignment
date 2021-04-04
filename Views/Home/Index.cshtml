@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@model BookListViewModel 
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- List group-->
+            <ul>
+                @foreach (var x in Model.Bowlers)
+                {
+                    <partial name="BookSummary" model="x" />
+                }
+            </ul> <!-- End -->
+        </div>
+    </div>
+</div>
+
+<div page-model="@Model.PagingInfo" page-action="Index" page-class-enabled="true" page-class="btn" 
+     page-class-normal="btn-outline-dark" page-class-selected="btn-primary" 
+     page-url-category="@Model.CurrentCategory" class="btn-group m-1"></div>
+<br />
+<br />
+

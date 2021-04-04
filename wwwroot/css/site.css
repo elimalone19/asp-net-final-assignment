@@ -1,0 +1,149 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.slider {
+    width: 300px !important;
+    height: 420px !important;
+}
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #0F1111;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 5px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+    margin: 4px;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+    background-color: #5e5e5e;
+    color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+.active {
+    background-color: #5e5e5e;
+    color: white;
+}
+
+.aside {
+    position: relative;
+    background-color: rgb(51, 51, 51,0.8);
+    padding: 15px;
+    color: navy;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.asideList {
+    position: relative;
+    background-color: white;
+    color: navy;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    height: auto;
+    width: 98%;
+    overflow: hidden;
+    margin: 15px;
+}
+
+body {
+    font-family: system-ui, serif;
+    background: url("https://www.publicdomainpictures.net/pictures/130000/velka/grey-gradient-background-1439642315lMp.jpg");
+    color: black;
+    text-align: center;
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+    /* Background image doesn't tile */
+    background-repeat: no-repeat;
+    /* Background image is fixed in the viewport so that it doesn't move when
+	   the content's height is greater than the image's height */
+    background-attachment: fixed;
+    /* This is what makes the background image rescale based
+	   on the container's size */
+    background-size: cover;
+    /* Set a background color that will be displayed
+	   while the background image is loading */
+    background-color: black;
+}
+
+[class*="col-"] {
+    width: 100%;
+    padding: 15px;
+}
+
+.footer {
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+}
+
+h1 h2 h3 {
+    font-size: 10vw
+}
+
+.container {
+    float: center;
+    width: 90%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+
+}
+
+th,
+td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+}
+
+td {
+    color: black;
+}
+
+
+th, tr, td {
+    text-align: left;
+}
+
+
+th {
+    background-color: #55608f;
+    color: #fff;
+}

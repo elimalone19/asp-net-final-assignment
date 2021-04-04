@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="../"><img style="width:135px; height:45px;" src="~/img/logo.png" /></a>
+        <a href="../" style="margin-top: 12px;">Home</a>
+    </div>
+
+
+    <div class="asideList">
+        <div style="float: left; margin-top: 100px; margin-left: 200px; margin-bottom: 30px;"><vc:navigation-menu /></div>
+
+        @RenderBody()
+
+    </div>
+
+
+</body>
+</html>

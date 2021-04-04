@@ -1,0 +1,27 @@
+﻿<!-- layout page is inherited from other pages -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+    <div class="asideList">
+        <!-- filters -->
+        <div style="float: left; margin-top: 100px; margin-left: 200px; margin-bottom: 10px;"><vc:navigation-menu /></div>
+    
+           <!-- this is where the body of each page goes -->
+        @RenderBody()
+
+    </div>
+
+
+</body>
+</html>
