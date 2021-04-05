@@ -40,7 +40,7 @@ namespace asp_net_fifth_assignment.Controllers
                     _repository.Bowlers.Where (x => x.TeamID == category).Count()
                 },
                 CurrentCategory = category
-            });
+        });;
         }
 
         public IActionResult Privacy()

@@ -14,6 +14,8 @@ namespace asp_net_fifth_assignment.Models
             _context = context;
         }
 
+
+ 
         public IQueryable<Bowlers> Bowlers => _context.Bowlers;
     }
 }

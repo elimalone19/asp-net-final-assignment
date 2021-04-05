@@ -23,5 +23,6 @@ namespace asp_net_fifth_assignment.Models
         public string BowlerZip { get; set;  }
         public string BowlerPhoneNumber { get; set; }
 
+
     }
 }
