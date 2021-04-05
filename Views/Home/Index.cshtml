@@ -2,7 +2,10 @@
     ViewBag.Title = Model.CurrentCategory;
 }
 
-@model BookListViewModel 
+@model BookListViewModel
+
+<!-- filters -->
+<div style="float: left; margin-top: 100px; margin-left: 200px; margin-bottom: 10px;"><vc:navigation-menu /></div>
 
 <div class="container py-5">
     <div class="row">
@@ -18,9 +21,9 @@
     </div>
 </div>
 
-<div page-model="@Model.PagingInfo" page-action="Index" page-class-enabled="true" page-class="btn" 
-     page-class-normal="btn-outline-dark" page-class-selected="btn-primary" 
-     page-url-category="@Model.CurrentCategory" class="btn-group m-1"></div>
+<div page-model="@Model.PagingInfo" page-action="Index" page-class-enabled="true" page-class="btn"
+        page-class-normal="btn-outline-dark" page-class-selected="btn-primary"
+        page-url-category="@Model.CurrentCategory" class="btn-group m-1"></div>
 <br />
 <br />
 

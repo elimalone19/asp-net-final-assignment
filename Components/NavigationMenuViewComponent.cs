@@ -13,6 +13,8 @@ namespace asp_net_fifth_assignment.Components
 
         private IBookstoreRepository repository;
         private BookstoreDbContext _context;
+        //public string SelectedCategory { get; set; }
+
 
         public NavigationMenuViewComponent (IBookstoreRepository r)
         {
@@ -23,10 +25,14 @@ namespace asp_net_fifth_assignment.Components
 
             ViewBag.SelectedCategory = RouteData?.Values["category"];
 
-            return View(repository.Teams
+            return View(
+
+       
+                repository.Teams
                 .Select(x => x.TeamName)
                 .Distinct()
                 .OrderBy(x => x)
+
                 );
         }
     }
