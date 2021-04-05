@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using asp_net_fifth_assignment.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace asp_net_fifth_assignment.Components
 {
@@ -11,6 +12,7 @@ namespace asp_net_fifth_assignment.Components
     {
 
         private IBookstoreRepository repository;
+        private BookstoreDbContext _context;
 
         public NavigationMenuViewComponent (IBookstoreRepository r)
         {
@@ -21,8 +23,8 @@ namespace asp_net_fifth_assignment.Components
 
             ViewBag.SelectedCategory = RouteData?.Values["category"];
 
-            return View(repository.Bowlers
-                .Select(x => x.TeamID)
+            return View(repository.Teams
+                .Select(x => x.TeamName)
                 .Distinct()
                 .OrderBy(x => x)
                 );

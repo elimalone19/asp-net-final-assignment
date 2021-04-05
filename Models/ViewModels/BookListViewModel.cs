@@ -9,7 +9,7 @@ namespace asp_net_fifth_assignment.Models.ViewModels
     {
         public IEnumerable<Bowlers> Bowlers { get; set; }
         public PagingInfo PagingInfo { get; set; }
-        public  int CurrentCategory { get; set; }
+        public string CurrentCategory { get; set; }
 
         public string Name { get; set; }
     }

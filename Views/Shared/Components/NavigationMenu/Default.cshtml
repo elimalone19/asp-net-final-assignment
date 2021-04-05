@@ -1,11 +1,11 @@
-﻿@model IEnumerable<int>
+﻿@model IEnumerable<string>
 
 
-<a asp-action="Index" asp-controller="Home" asp-route-category="0"
+<a asp-action="Index" asp-controller="Home" asp-route-category=""
        asp-route-page="1" >Home</a>
 
 
-@foreach (int category in Model)
+@foreach (string category in Model)
 {
     <a class="btn btn-block @(category == ViewBag.SelectedCategory ? "btn-primary" : "btn-outline-secondary")"
        asp-action="Index" asp-controller="Home" asp-route-category="@category"

@@ -19,10 +19,13 @@ namespace asp_net_fifth_assignment.Models
         public string BowlerMiddleInit { get; set; }
         public string BowlerCity { get; set; }
         public int TeamID { get; set; }
+        [System.ComponentModel.DataAnnotations.Schema.ForeignKey("TeamID")]
         public string BowlerState { get; set; }
-        public string BowlerZip { get; set;  }
+        public string BowlerZip { get; set; }
         public string BowlerPhoneNumber { get; set; }
 
+        public Teams Teams { get; set; }
 
+        public string TeamName { get; set; }
     }
 }

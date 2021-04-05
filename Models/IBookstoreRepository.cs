@@ -8,5 +8,6 @@ namespace asp_net_fifth_assignment.Models
     public interface IBookstoreRepository
     {
         IQueryable<Bowlers> Bowlers { get; }
+        IQueryable<Teams> Teams { get; }
     }
 }

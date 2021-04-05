@@ -14,5 +14,6 @@ namespace asp_net_fifth_assignment.Models
         }
 
         public DbSet<Bowlers> Bowlers { get; set; }
+        public DbSet<Teams> Teams { get; set; }
     }
 }

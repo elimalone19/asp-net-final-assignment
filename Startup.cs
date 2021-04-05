@@ -68,7 +68,7 @@ namespace asp_net_fifth_assignment
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("catpage",
-                    "{category:int}/{pageNum:int}",
+                    "{category}/{pageNum:int}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("page",
@@ -76,7 +76,7 @@ namespace asp_net_fifth_assignment
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("category",
-                    "{category:int}",
+                    "{category}",
                     new { Controller = "Home", action = "Index", pageNum = 1 });
 
                 endpoints.MapControllerRoute(

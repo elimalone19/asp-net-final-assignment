@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using asp_net_fifth_assignment.Models.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace asp_net_fifth_assignment.Controllers
 {
@@ -16,31 +17,55 @@ namespace asp_net_fifth_assignment.Controllers
 
         private IBookstoreRepository _repository;
 
+        private BookstoreDbContext _context;
+
         public int PageSize = 5;
 
-        public HomeController(ILogger<HomeController> logger, IBookstoreRepository repository)
+        public HomeController(ILogger<HomeController> logger, IBookstoreRepository repository, BookstoreDbContext context)
         {
             _logger = logger;
             _repository = repository;
+            _context = context;
         }
 
-        public IActionResult Index(int category = 0, int page = 1)
+        public IActionResult Index(string category = null, int page = 1)
         {
             return View(new BookListViewModel
             {
-                Bowlers = _repository.Bowlers
-                .Where(p => category == 0 || p.TeamID == category)
+               // join the tables to get team names
+                Bowlers = _context.Bowlers
+                    .Join(
+                            _context.Teams,
+                     
+                            bowler => bowler.TeamID,
+                            team => team.TeamID,
+
+                            (Bowlers, Teams) => new Bowlers
+                            {
+                                BowlerID = Bowlers.BowlerID,
+                                BowlerLastName = Bowlers.BowlerLastName,
+                                BowlerFirstName = Bowlers.BowlerFirstName,
+                                BowlerMiddleInit = Bowlers.BowlerMiddleInit,
+                                BowlerAddress = Bowlers.BowlerAddress,
+                                BowlerCity = Bowlers.BowlerCity,
+                                BowlerState = Bowlers.BowlerState,
+                                BowlerZip = Bowlers.BowlerZip,
+                                BowlerPhoneNumber = Bowlers.BowlerPhoneNumber,
+                                TeamName = Teams.TeamName,
+                                TeamID = Teams.TeamID
+
+                            }).Where(p => category == null || p.TeamName == category)
                 .OrderBy(p => p.BowlerID).Skip((page - 1) * PageSize)
                 .Take(PageSize),
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = category == 0 ? _repository.Bowlers.Count() :
-                    _repository.Bowlers.Where (x => x.TeamID == category).Count()
+                    TotalNumItems = category == null ? _repository.Bowlers.Count() :
+                    _context.Teams.Where (x => x.TeamName == category).Count()
                 },
                 CurrentCategory = category
-        });;
+            });;
         }
 
         public IActionResult Privacy()
